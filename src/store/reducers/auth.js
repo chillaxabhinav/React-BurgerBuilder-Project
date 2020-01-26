@@ -1,7 +1,7 @@
 import * as actionTypes from '../../store/actions/actionsTypes';
 import  {updateObject} from '../utility';
 
-const initialState = {
+const initialState ={ 
     token : null,
     userId : null,
     error : null,
