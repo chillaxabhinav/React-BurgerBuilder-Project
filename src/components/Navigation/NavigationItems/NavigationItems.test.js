@@ -8,8 +8,16 @@ import NavigationItem from './NavigationItem/NavigationItem';
 configure({adapter : new Adapter()});
 
 describe('<NavigationItems />',()=>{
+    let wrapper;
+    beforeEach(()=>{
+        wrapper = shallow(<NavigationItems />);
+    })
+
     it('Should render 2 <NavigationItems/> if not authenticated',()=>{
-        const wrapper = shallow(<NavigationItems />);
         expect(wrapper.find(NavigationItem)).toHaveLength(2);
+    });
+    it('Should render 2 <NavigationItems/> if  authenticated', () => {
+        wrapper = shallow(<NavigationItems isAuthenticated/>);
+        expect(wrapper.find(NavigationItem)).toHaveLength(3);
     })
 })
